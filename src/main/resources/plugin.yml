@@ -1,0 +1,26 @@
+name: H-RAMWatch
+version: ${project.version}
+main: eu.hindustries.timur.hramwatch.HRAMWatch
+api-version: '1.21'
+author: Timur @ H-Industries
+description: Monitors player and server resources to protect performance.
+
+commands:
+  hramwatch:
+    description: Main command for H-RAMWatch.
+    usage: /hramwatch <dashboard|toggle|reload>
+    aliases: [hrw, ram]
+
+permissions:
+  hramwatch.dashboard:
+    description: Allows viewing the resource usage dashboard.
+    default: true
+  hramwatch.toggle:
+    description: Allows toggling the AFK kicker on or off.
+    default: op
+  hramwatch.reload:
+    description: Allows reloading the H-RAMWatch configuration.
+    default: op
+  hramwatch.bypass:
+    description: Player with this permission will not be kicked by the limiter.
+    default: op

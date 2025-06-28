@@ -1,0 +1,33 @@
+# --- H-RAMWatch Configuration ---
+
+# How often (in seconds) the plugin should check players for high resource usage.
+check-interval-seconds: 30
+
+afk-kick:
+  # Should the AFK kicker be enabled when the server starts?
+  # Admins can still enable/disable it live with /hramwatch toggle
+  enabled-by-default: true
+
+  # Time in minutes a player must be inactive to be considered AFK.
+  afk-time-minutes: 10
+
+  # If an AFK player has more than this many chunks loaded in their view, they are a candidate for kicking.
+  # A normal player with render distance 10 has about 441 chunks in view (21x21).
+  # Set this high to target players with large render distances or chunk loaders.
+  chunk-threshold: 500
+
+  # If an AFK player has more than this many entities within the check-radius, they are a candidate for kicking.
+  entity-threshold: 250
+
+  # The radius (in blocks) around the player to check for entities.
+  entity-check-radius: 64
+
+  # Set to true to send a warning message before kicking the player.
+  # The player will be kicked on the *next* check if they are still AFK and over the limits.
+  warning-enabled: true
+
+  # Message sent to the player if they are over the limits and warning-enabled is true.
+  warning-message: "&c[Warning] You are AFK in a resource-intensive area and may be kicked soon to preserve server performance."
+
+  # The message shown to the player when they are kicked.
+  kick-message: "&cYou were kicked for being AFK in a resource-intensive area.\n&eThis is done to keep the server running smoothly for everyone!"
